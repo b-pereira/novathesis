@@ -252,7 +252,7 @@ Declaro ter atuado com integridade na elaboração do presente trabalho académi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\definecolor{grey}{rgb}{0.6,0.6,0.6}
+\definecolor{grey}{cmyk}{0,0,0, .5}
 \definecolor{ec}{cmyk}{0.35,0.09,0.0,0.0}
 \definecolor{um}{cmyk}{0.25,1.00,0.95,0.20}
 \definecolor{lightGray}{gray}{0.92}
