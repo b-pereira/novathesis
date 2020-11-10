@@ -24,6 +24,46 @@
 \RequirePackage{algpseudocode}
 
 %%%%% Fine tuning of typesetting
+
+\RequirePackage{ifluatex}
+
+\RequirePackage{ifxetex}
+\ifxetex
+%%%%% Fine tuning of typesetting
+\RequirePackage[%
+  babel=true,
+  %activate={true,nocompatibility},  % activate={true,nocompatibility} - activate protrusion and expansion
+  final,            % final - enable microtype; use "draft" to disable  
+  %tracking=true,    % tracking=true - activate this technique
+  %kerning=true,     % kerning=true - activate this technique
+  %spacing=true,     % spacing=true - activate this technique
+  factor=1100,      % factor=1100 - add 10% to the protrusion amount (default is 1000)
+  stretch=10,       % stretch=10 - reduce stretchability (default is 20)
+  shrink=10,        % shrink=10 - reduce shrinkability (default is 20),
+  letterspace=20,
+  verbose=silent
+]{microtype}
+\DeclareMicrotypeSet{alltext}{encoding={T1}}
+\else
+%%%%% Fine tuning of typesetting
+\RequirePackage[%
+  babel=true,
+  activate={true,nocompatibility},  % activate={true,nocompatibility} - activate protrusion and expansion
+  final,            % final - enable microtype; use "draft" to disable  
+  tracking=true,    % tracking=true - activate this technique
+  %kerning=true,     % kerning=true - activate this technique
+  %spacing=true,     % spacing=true - activate this technique
+  factor=1100,      % factor=1100 - add 10% to the protrusion amount (default is 1000)
+  stretch=10,       % stretch=10 - reduce stretchability (default is 20)
+  shrink=10,        % shrink=10 - reduce shrinkability (default is 20),
+  letterspace=20,
+  verbose=silent
+]{microtype}
+\DeclareMicrotypeSet{alltext}{encoding={T1}}
+\fi
+
+
+
 %\RequirePackage[%
 %  babel=true,
 %  activate={true,nocompatibility},  % activate={true,nocompatibility} - activate protrusion and expansion
@@ -63,7 +103,7 @@
   \RequirePackage{xcolor}%
   \RequirePackage{colortbl}
   \definecolor{darkblue}{rgb}{0.0,0.08,0.45}%
-  \RequirePackage[xetex, breaklinks, colorlinks=true, pdfdisplaydoctitle]{hyperref}%
+  \RequirePackage[breaklinks, colorlinks=true, pdfdisplaydoctitle]{hyperref}%
 	\RequirePackage[all]{hypcap}
   \RequirePackage{memhfixc}%   Must be used on memoir document class after hyperref
 
