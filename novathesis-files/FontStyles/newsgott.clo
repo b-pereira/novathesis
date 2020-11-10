@@ -13,7 +13,7 @@
 \newfontfamily{\newsgottl}{NewsGotT}[
 Path = novathesis-files/FontStyles/fonts/,
 Extension = .ttf,
-Mapping=tex-text,
+Ligatures=TeX,
 UprightFont=NewsGotT-Light
 ]
 
@@ -23,7 +23,7 @@ UprightFont=NewsGotT-Light
 \setmainfont{NewsGotT}[
 Path = novathesis-files/FontStyles/fonts/,
 Extension = .ttf,
-Mapping=tex-text,
+Ligatures=TeX,
 UprightFont=NewsGotT-Regular,
 BoldFont=NewsGotT-Bold,
 ItalicFont=NewsGotT-Italic,
@@ -35,8 +35,9 @@ BoldItalicFont=NewsGotT-Bold-Italic]
 Scale=0.8,
 Path = novathesis-files/FontStyles/fonts/,
 Extension = .ttf,
-Mapping=tex-text,
+Ligatures=TeX,
 UprightFont=*-Regular,
 BoldFont=*-Bold,
 ItalicFont=*-Italic,
 BoldItalicFont=*-BoldItalic]
+
