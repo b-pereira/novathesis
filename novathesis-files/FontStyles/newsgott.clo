@@ -27,7 +27,7 @@ Mapping=tex-text,
 UprightFont=NewsGotT-Regular,
 BoldFont=NewsGotT-Bold,
 ItalicFont=NewsGotT-Italic,
-BoldItalicFont=NewsGotT-BoldItalic]
+BoldItalicFont=NewsGotT-Bold-Italic]
 
 %https://sourcefoundry.org/hack/
 \setmonofont{Hack}[
