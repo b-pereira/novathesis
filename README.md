@@ -34,7 +34,7 @@ Other elements might be not exactly as mandated in the standards like _elements 
 
 However if you are not content with what was said, the UM's Informatics Department published a [PDF with forms](https://mei.di.uminho.pt/sites/default/files/Capa-MIMEI.pdf) where you can edit the content for a UM Engineering School's master dissertation
 
-You can see the issue in the original repository in ([https://github.com/joaomlourenco/novathesis/issues/149](https://github.com/joaomlourenco/novathesis/issues/149). There, I add the instructions in the _HOW TO_ section below to change the template accordingly to met the criteria above.
+You can see the issue in the original repository in ([https://github.com/joaomlourenco/novathesis/issues/149](https://github.com/joaomlourenco/novathesis/issues/149)). There, I add the instructions in the _HOW TO_ section below to change the template accordingly to met the criteria above.
 
 ## HOW TO
 
