@@ -38,11 +38,11 @@
 \thesiscover[plain,front]={}
 
 % Set margins for "normal" pages
-\margin[screen,top]={2.5cm}
+\margin[screen,top]={3.5cm}
 \margin[screen,bottom]={2.5cm}
 \margin[screen,left]={2.5cm}
 \margin[screen,right]={2.5cm}
-\margin[paper,top]={2.5cm}
+\margin[paper,top]={3.5cm}
 \margin[paper,bottom]={2.5cm}
 \margin[paper,left]={2.5cm}
 \margin[paper,right]={2.5cm}
