@@ -109,7 +109,9 @@
 
 %\dissertationstr[bsc,pt]={Relatório para obtenção do Grau de %
 %\thedegreestr[\novathesis@opt@docdegree,\theauthorgender,\novathesis@opt@coverlang]\ em\\[1ex] \textbf{\fontsize{12}{12}\selectfont\themajorfield[\novathesis@opt@coverlang]}}
-
+\usepackage{ifthen}
+\ifthenelse{\equal{\novathesis@opt@coverlang}{\string en}}{
+\abstractorder[en]={pt,en}}{}
 
 \dissertationstr[mscplan,pt]={%
 \thedocdegreestr[\novathesis@opt@docdegree,\novathesis@opt@coverlang]\ \\* Mestrado em \themajorfield[\novathesis@opt@coverlang]}
