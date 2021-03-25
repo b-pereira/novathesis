@@ -121,6 +121,7 @@
 \input{novathesis-files/fix-babel.clo}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Cover definition macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -998,7 +999,7 @@
 \newcommand{\printstatementofintegritypage}{%
 
 \cleardoublepage%
-\thispagestyle{empty}
+\thispagestyle{plain}
 \mbox{}
 \AddToShipoutPictureFG*{% Add only to the ForeGround of this page
     \AtPageCenter{% lower-left anchor at Page Center
@@ -1049,7 +1050,7 @@
 \newcommand{\printcopyrightpage}{%
 
 \cleardoublepage%
-\thispagestyle{empty}
+\thispagestyle{plain}
 \mbox{}
 \AddToShipoutPictureFG*{% Add only to the ForeGround of this page
     \AtPageCenter{% lower-left anchor at Page Center
@@ -1068,7 +1069,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\dedicatory{%%
 	\cleardoublepage%
-	\thispagestyle{empty}%
+	\thispagestyle{plain}%
 	~\\[2cm]%
     \begin{flushright}%
     \begin{minipage}{100mm}%
@@ -1088,7 +1089,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\quote{%%
 	\cleardoublepage%
-	\thispagestyle{empty}%
+	\thispagestyle{plain}%
 	~\\[2cm]%
     \begin{flushright}%
     \begin{minipage}{100mm}%
@@ -1150,7 +1151,6 @@
 \InputIfFileExists{novathesis-files/ChapStyles/\novathesis@opt@chapstyle.clo}{}{}
 
 \InputIfFileExists{novathesis-files/FontStyles/\novathesis@opt@fontstyle.clo}{}{}
-
 
 
 

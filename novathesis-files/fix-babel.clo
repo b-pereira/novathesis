@@ -51,3 +51,4 @@
 
 % Corrigir espaço para páginas com numeração romana na ToC
 \renewcommand{\@pnumwidth}{2em}
+

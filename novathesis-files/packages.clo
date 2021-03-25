@@ -124,6 +124,7 @@
 }
 
 
+
 %%%%% Configure Graphics
 \RequirePackage{graphicx}
 \graphicspath{{Chapters/Figures/}}

@@ -23,6 +23,7 @@ UprightFont=NewsGotT-Light
 \setmainfont{NewsGotT}[
 Path = novathesis-files/FontStyles/fonts/,
 Extension = .ttf,
+%LetterSpace= 1.5,
 Ligatures=TeX,
 UprightFont=NewsGotT-Regular,
 BoldFont=NewsGotT-Bold,
