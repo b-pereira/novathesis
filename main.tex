@@ -37,7 +37,7 @@
 
 % The default option marked with (*)
 \documentclass[
-  docdegree=msc,        % phd(*), phdplan, phdprop, msc, mscplan, bsc
+  docdegree=mscplan,        % phd(*), phdplan, phdprop, msc, mscplan, bsc
   school=um/eeng,      % um/eeng, um/emed, um/ec 
   lang=pt,              % en(*), fr, it, pt
   %coverlang=en,         % defaults to main language
@@ -98,13 +98,26 @@
   oneside
 ]{novathesis}
 
-
+\defbibheading{subbibliography}{\section*{References for Chapter \ref{refsection:\therefsection}}}
 
 %%============================================================
 %%
 %%  BEGINING OF USER COSTUMIZATION
 %%
 %%============================================================
+
+\renewcommand*{\glossariescaptionsportuges}{%
+\renewcommand*{\glossaryname}{Glossário}%
+\renewcommand*{\acronymname}{Lista de Acrónimos}%
+\renewcommand*{\entryname}{Notação}%
+\renewcommand*{\descriptionname}{Descri\c c\~ao}%
+\renewcommand*{\symbolname}{Símbolo}%
+\renewcommand*{\pagelistname}{Lista de Páginas}%
+\renewcommand*{\glssymbolsgroupname}{Símbolos}%
+\renewcommand*{\glsnumbersgroupname}{Números}%
+}%
+
+
 % Default
 %\DeclareMathSizes{12}{12}{8}{6}
 \DeclareMathSizes{12}{12}{11}{10}
@@ -321,10 +334,13 @@
 %% Begining of document
 \begin{document}
 
-\printcoverpage    % The cover page
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \thesisfrontmatter  % Before the main text (TOC, etc)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{0}
+\printcoverpage    % The cover page
+
 \printaftercover
 \printcopyright    % Print the copyright page 
 \printstatementofintegrity
@@ -340,9 +356,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \thesismainmatter  % The main text
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
+\counterwithout{algorithm}{chapter}
+\counterwithout{lstlisting}{chapter}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \printchapthers    % Print document chapters
-\printbib    % Print the bibliography
+\printbibheading\printbibliography[section=1,heading=subbibliography]
+%\printbibliography[section=2,heading=subbibliography]
+%\printbib    % Print the bibliography
 % \printotherlists   % Alternative location to print the other lists (if you uncomment this one, comment the other one above)
 \printotherlists   % If option 'otherlistsat=back', print other lists of contents according to instructions given above, otherwise do nothing
 \printappendixes  % Print appendixes, if any!
