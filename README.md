@@ -23,76 +23,21 @@ For this particular version you can contact me via Facebook via PM or by email. 
 
 # Important issues
 
-Some standards of this template don't met the [RT-31/2019 Standards For Formatting Doctoral Theses And Master's Works](https://alunos.uminho.pt/PT/estudantes/Formataes/1_Despacho_RT-31_2019.pdf). They are:
+Some standards of this template don't meet the [RT-31/2019 Standards For Formatting Doctoral Theses And Master's Works](https://alunos.uminho.pt/PT/estudantes/Formataes/1_Despacho_RT-31_2019.pdf). They are:
 
-1) Copyright, Statement of Integrity and Dedicatory must have page numbering;
-2) The Abstract must have the title of the thesis;
-3) Abstract in Portuguese must always come first, even in English thesis;
-4) Tables, charts, graphs, figures, etc. they must be numbered, in each case, from 1 to N, and contain a synthetic title that clearly reflects the respective content;
+1) The Abstract must have the title of the thesis;
 
 Other elements might be not exactly as mandated in the standards like _elements metrics and colors from the cover and front page_. **As far as i know**, there is a differentiation between the _digital version_ and _the printed one_, and UM don't stress the exact metric standards from the former as they do in the latter. Anyway, **the printing company will deal with the printed version cover and front page**. **The stationary stores near _campi_ already have the the Adobe Illustrator file for that effect and you just have to give the digital file**. In others you must provide the _Ai_ file in [here](https://alunos.uminho.pt/PT/estudantes/Formataes/Capas.zip).
 
 However if you are not content with what was said, the UM's Informatics Department published a [PDF with forms](https://mei.di.uminho.pt/sites/default/files/Capa-MIMEI.pdf) where you can edit the content for a UM Engineering School's master dissertation
 
-You can see the issue in the original repository in ([https://github.com/joaomlourenco/novathesis/issues/149](https://github.com/joaomlourenco/novathesis/issues/149)). There, I add the instructions in the _HOW TO_ section below to change the template accordingly to met the criteria above.
 
 ## HOW TO
 
-### 1) Copyright, Statement of Integrity and Dedicatory must have page numbering;
-
-For the page numbering, `\thispagestyle{plain}` in some places is what's necessary. Commenting out the `\thispagestyle{empty}` line will produce the header as well. In the `novathesis.cls` I'm doing some silly stuff, like using `\thispagestyle{empty}`  where it isn't supposed to, but some minimal changes can be done with no side effects. For some reason that I can't quite recall why I did, I declared the cover page before the front matter. To fix this problem in the `main.tex`:
-```tex
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\thesisfrontmatter  % Before the main text (TOC, etc)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{page}{0}
-\printcoverpage    % The cover page
-\printaftercover
-\printcopyright    % Print the copyright page 
-```
-The `\setcounter{page}{0}` is to reset the page counter, after the front page, given that the front page must be "counted but pagination not shown" as in RT-31/2019
-
-In `novathesis.cls` find `\thispagestyle{empty}` in:
-
-```tex
-\newcommand{\printcopyrightpage}{%
-```
-and 
-
-```tex
-\newcommand{\printstatementofintegritypage}{%
-```
-as well 
-```tex
-\def\dedicatory{%%
-```
-and 
-
-```tex
-\def\quote{%%
-```
-and change `\thispagestyle{empty}` to `\thispagestyle{plain}`
-
-### 2) The Abstract must have the title of the thesis;
+## 1) The Abstract must have the title of the thesis;
 
 As it is, you can use the macro `\thetitle` as in `\textbf{\thetitle}` in the abstract. However, further customization has to be added to differentiate between languages. As it is `\thetitle` refers to the document's main title in that language. Other shortcut is to copy and paste the title in the language that is supposed to.
 
-### 3) Abstract in Portuguese must always come first, even in English thesis;
-
-In the customization area of `template.tex` add:  `\abstractorder[en]={pt,en}`.
-
-### 4) Tables, charts, graphs, figures, etc. they must be numbered, in each case, from 1 to N
-
-In the `template.tex`to find the line with `\thesismainmatter` and add the following:
-```tex
-\thesismainmatter  % The main text
-\counterwithout{figure}{chapter}
-\counterwithout{table}{chapter}
-\counterwithout{equation}{chapter}
-\counterwithout{algorithm}{chapter}
-\counterwithout{lstlisting}{chapter}
-```
-Custom (or other) enviroments counters have also have to be dealt like this. For instance, _theorem_: `\counterwithout{theorem}{chapter}`
 
 ### Extras
 
